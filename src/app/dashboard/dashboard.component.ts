@@ -4,6 +4,7 @@ import { Lead, KpiCardGroup, SubStatusStage, TableLeadStatus } from '../models/l
 import { LeadService } from '../services/lead.service';
 import { KpiCardComponent } from './kpi-card/kpi-card.component';
 import { LeadStatusBadgeComponent } from './lead-status-badge/lead-status-badge.component';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-dashboard',
@@ -31,16 +32,10 @@ export class DashboardComponent implements OnInit {
 
   // Pagination Signals
   readonly currentPage = signal<number>(1);
-  readonly pageSize = signal<number>(10);
+  readonly pageSize = signal<number>(environment.defaultPageSize);
 
   // Available Filter Options
-  readonly statusFilterOptions: string[] = [
-    'All',
-    'Pending',
-    'Active',
-    'Rejected',
-    'Disbursed'
-  ];
+  readonly statusFilterOptions: string[] = environment.statusFilterOptions;
 
   // Dynamic KPI Card Groups Computed from Raw Leads Payload
   readonly kpiGroups = computed<KpiCardGroup[]>(() => {
