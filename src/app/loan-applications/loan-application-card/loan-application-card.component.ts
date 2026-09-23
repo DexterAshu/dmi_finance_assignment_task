@@ -1,12 +1,13 @@
 import { Component, input, output } from '@angular/core';
-import { CommonModule, CurrencyPipe, DatePipe } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { LoanApplication } from '../../models/loan-application.model';
 import { StatusBadgeComponent } from '../../shared/status-badge/status-badge.component';
+import { IndianCurrencyPipe } from '../../shared/pipes/indian-currency.pipe';
 
 @Component({
   selector: 'app-loan-application-card',
   standalone: true,
-  imports: [CommonModule, CurrencyPipe, DatePipe, StatusBadgeComponent],
+  imports: [CommonModule, DatePipe, StatusBadgeComponent, IndianCurrencyPipe],
   templateUrl: './loan-application-card.component.html',
   styleUrl: './loan-application-card.component.css'
 })

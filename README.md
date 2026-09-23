@@ -216,51 +216,6 @@ Navigate to `http://localhost:4200/` in your browser.
 
 ---
 
-## Features Progress
-
-- [x] **Stage 01**: Requirement Analysis + Project Foundation + Documentation
-- [x] **Stage 02**: Mock Data (`db.json`) & `json-server` REST API + `LoanApplicationService`
-- [x] **Stage 03**: Loan Application List & Summary Strip UI
-- [x] **Stage 04**: Client-Side Filtering & Sorting Logic + Filtered Empty State
-- [x] **Stage 05**: Application Detail Side Panel, Credit Score Gauge & Status Update
-- [x] **Stage 06**: KYB Document Upload & Multi-Step Verification Flow
-- [x] **Stage 07**: Lead Management Dashboard & Local Data Table
-- [ ] **Stage 08**: Responsive Layout Refinement & UI Polish
-- [ ] **Stage 09**: Error Handling, Empty States & Validation
-- [ ] **Stage 10**: Final Cleanup + README + Interview Documentation
-
----
-
-## Development Stages
-
-| Stage | Focus Area | Status |
-|---|---|---|
-| **STAGE 01** | Requirement Analysis + Project Foundation + Setup | **Complete** |
-| **STAGE 02** | Mock data (`db.json`) + `json-server` + Loan Application Service | **Complete** |
-| **STAGE 03** | Loan Application List View + Summary Strip | **Complete** |
-| **STAGE 04** | Client-side Filtering + Sorting + State handling | **Complete** |
-| **STAGE 05** | Application Detail Side Drawer + Credit Score Gauge + Status Update | **Complete** |
-| **STAGE 06** | KYB Screens + Document Upload Flow + Prompts | **Complete** |
-| **STAGE 07** | Dashboard + Lead Table + Local Data Source | **Complete** |
-| **STAGE 08** | Responsive Design + Visual Polish | Pending |
-| **STAGE 09** | Testing + Empty/Loading/Error Verification | Pending |
-| **STAGE 10** | Final Cleanup + README + Interview Documentation | Pending |
-
----
-
-## Assumptions
-
-1. **Client-Side Data Operations**: Filtering and sorting for Loan Applications are executed on the client-side as explicitly required by the assignment spec.
-2. **Pipeline Amount**: Defined as `Pending` + `Under Review` loan amounts.
-3. **Summary Strip Metrics**: Summary metrics represent overall portfolio metrics derived from the full dataset.
-4. **Side Drawer Detail View**: Application details use a slide-over side drawer component.
-5. **UI-Only Status Update**: Changing loan application status in the detail drawer simulates an update locally in state without mutating the REST API database permanently.
-6. **Credit Score Gauge**: Visual SVG component displaying scores on a standard 300–900 scale.
-7. **KYB Document Flow**: KYB document upload processes file selection and validation in local browser memory without a backend storage API.
-8. **Dashboard Data**: Lead dashboard metrics consume a structured local JSON data file.
-
----
-
 ## Build
 
 To compile the application for production:

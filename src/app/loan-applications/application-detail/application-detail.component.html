@@ -23,7 +23,7 @@
       <div class="amount-badge-row">
         <div class="detail-amount-group">
           <span class="section-label">Requested Loan Amount</span>
-          <span class="detail-amount-value">{{ application().amount | currency:'INR':'symbol':'1.0-0' }}</span>
+          <span class="detail-amount-value">{{ application().amount | indianCurrency }}</span>
         </div>
         <app-status-badge [status]="application().status"></app-status-badge>
       </div>
