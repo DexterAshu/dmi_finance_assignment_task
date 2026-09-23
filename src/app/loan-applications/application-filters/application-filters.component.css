@@ -1,10 +1,10 @@
 .filters-container {
   background-color: #ffffff;
-  border-radius: 12px;
+  border-radius: 16px;
   border: 1px solid #e2e8f0;
   padding: 1.25rem 1.5rem;
   margin-bottom: 1.75rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
 }
 
 .filters-header {
@@ -20,17 +20,17 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.925rem;
-  font-weight: 700;
-  color: #1e293b;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #0f172a;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.05em;
 }
 
 .filters-title svg {
   width: 18px;
   height: 18px;
-  color: #2563eb;
+  color: #0284c7;
 }
 
 .btn-clear {
@@ -40,9 +40,9 @@
   background-color: #f1f5f9;
   color: #475569;
   font-size: 0.775rem;
-  font-weight: 600;
-  padding: 0.35rem 0.75rem;
-  border-radius: 6px;
+  font-weight: 700;
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
   border: 1px solid #cbd5e1;
   cursor: pointer;
   transition: all 0.15s ease;
@@ -78,29 +78,30 @@
 }
 
 .filter-label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: #64748b;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #94a3b8;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
 }
 
 .filter-select {
   width: 100%;
-  background-color: #f8fafc;
-  border: 1px solid #cbd5e1;
-  border-radius: 8px;
-  padding: 0.55rem 0.85rem;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 0.6rem 0.85rem;
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: 600;
   color: #0f172a;
   cursor: pointer;
   outline: none;
-  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  transition: all 0.15s ease;
 }
 
 .filter-select:focus {
-  border-color: #2563eb;
+  border-color: #0284c7;
   background-color: #ffffff;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.12);
 }

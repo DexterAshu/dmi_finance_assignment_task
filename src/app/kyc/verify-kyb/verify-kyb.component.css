@@ -5,14 +5,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-sizing: border-box;
 }
 
 .top-nav-bar {
   width: 100%;
-  max-width: 480px;
+  max-width: 520px;
   margin-bottom: 1rem;
   display: flex;
   justify-content: flex-start;
+  box-sizing: border-box;
 }
 
 .btn-back-nav {
@@ -42,12 +44,13 @@
 /* Constrained mobile-first layout matching Figma screen dimensions */
 .kyc-card-layout {
   width: 100%;
-  max-width: 480px;
+  max-width: 520px;
   background-color: #ffffff;
   border-radius: 20px;
   border: 1px solid #e2e8f0;
-  padding: 1.75rem 1.5rem;
+  padding: 2rem 1.75rem;
   box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
 }
 
 .kyc-header {
@@ -65,11 +68,15 @@
 
 .kyc-form-content {
   margin-top: 1rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .form-step-container {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .step-instruction {
@@ -84,12 +91,16 @@
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .form-field {
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .form-label {
@@ -101,10 +112,11 @@
 .form-select,
 .form-input {
   width: 100%;
+  box-sizing: border-box;
   background-color: #ffffff;
   border: 1px solid #cbd5e1;
   border-radius: 10px;
-  padding: 0.7rem 0.9rem;
+  padding: 0.75rem 0.9rem;
   font-size: 0.9rem;
   font-weight: 600;
   color: #0f172a;
@@ -120,6 +132,8 @@
 
 .upload-field {
   margin-top: 0.25rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .form-actions {
@@ -128,10 +142,13 @@
   align-items: center;
   gap: 1rem;
   margin-top: 1rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .btn-continue {
   width: 100%;
+  box-sizing: border-box;
   background-color: #2563eb;
   color: #ffffff;
   font-size: 0.95rem;
@@ -173,6 +190,8 @@
   align-items: center;
   text-align: center;
   padding: 1.5rem 0 0.5rem 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .success-icon-badge {
@@ -211,6 +230,7 @@
   flex-direction: column;
   gap: 0.75rem;
   margin-bottom: 2rem;
+  box-sizing: border-box;
 }
 
 .doc-summary-card {
@@ -223,6 +243,7 @@
   align-items: flex-start;
   gap: 0.2rem;
   text-align: left;
+  box-sizing: border-box;
 }
 
 .doc-summary-type {
@@ -247,10 +268,12 @@
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  box-sizing: border-box;
 }
 
 .btn-restart {
   width: 100%;
+  box-sizing: border-box;
   background: none;
   color: #475569;
   font-size: 0.875rem;

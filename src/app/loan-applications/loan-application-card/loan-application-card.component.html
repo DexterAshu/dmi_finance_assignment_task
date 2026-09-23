@@ -1,14 +1,24 @@
 <div
   class="card-container"
+  [ngClass]="'status-accent-' + application().status.toLowerCase().replace(' ', '-')"
   tabindex="0"
   role="button"
   [attr.aria-label]="'View details for application ' + application().id + ' by ' + application().applicantName"
   (click)="onCardSelect()"
   (keydown)="onKeyDown($event)">
+  
+  <!-- Status Accent Bar Top Indicator -->
+  <div class="accent-top-bar"></div>
+
   <div class="card-header">
     <div class="applicant-info">
-      <h3 class="applicant-name">{{ application().applicantName }}</h3>
-      <span class="application-id">{{ application().id }}</span>
+      <div class="avatar-circle">
+        {{ initials }}
+      </div>
+      <div class="name-id-wrapper">
+        <h3 class="applicant-name">{{ application().applicantName }}</h3>
+        <span class="application-id">{{ application().id }}</span>
+      </div>
     </div>
     <app-status-badge [status]="application().status"></app-status-badge>
   </div>
@@ -32,5 +42,13 @@
         <span class="detail-value">{{ application().appliedDate | date:'dd MMM yyyy' }}</span>
       </div>
     </div>
+  </div>
+
+  <!-- Interactive Action Link Footer -->
+  <div class="card-footer-action">
+    <span class="action-text">View Full Details</span>
+    <svg class="action-arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.2" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+    </svg>
   </div>
 </div>
