@@ -1,11 +1,11 @@
 import { Component, OnInit, signal, computed, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LoanApplication, LoanStatus, LoanType } from '../../models/loan-application.model';
-import { LoanApplicationService } from '../../services/loan-application.service';
-import { SummaryStripComponent } from '../summary-strip/summary-strip.component';
-import { LoanApplicationCardComponent } from '../loan-application-card/loan-application-card.component';
-import { ApplicationFiltersComponent, SortOption } from '../application-filters/application-filters.component';
-import { ApplicationDetailComponent } from '../application-detail/application-detail.component';
+import { LoanApplication, LoanStatus, LoanType } from '../models/loan-application.model';
+import { LoanApplicationService } from '../services/loan-application.service';
+import { SummaryStripComponent } from '../components/summary-strip/summary-strip.component';
+import { LoanApplicationCardComponent } from '../components/loan-application-card/loan-application-card.component';
+import { ApplicationFiltersComponent, SortOption } from '../components/application-filters/application-filters.component';
+import { ApplicationDetailComponent } from '../components/application-detail/application-detail.component';
 
 @Component({
   selector: 'app-loan-application-list',

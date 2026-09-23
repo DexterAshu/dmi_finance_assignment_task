@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LoanStatus } from '../../models/loan-application.model';
+import { LoanStatus } from '../../../features/loan-applications/models/loan-application.model';
 
 @Component({
   selector: 'app-status-badge',

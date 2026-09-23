@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IndianCurrencyPipe } from '../../shared/pipes/indian-currency.pipe';
+import { IndianCurrencyPipe } from '../../../../shared/pipes/indian-currency.pipe';
 
 @Component({
   selector: 'app-summary-strip',

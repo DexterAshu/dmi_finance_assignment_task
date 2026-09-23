@@ -9,21 +9,21 @@ export const routes: Routes = [
   {
     path: 'applications',
     loadComponent: () =>
-      import('./loan-applications/loan-application-list/loan-application-list.component').then(
+      import('./features/loan-applications/loan-application-list/loan-application-list.component').then(
         (m) => m.LoanApplicationListComponent
       )
   },
   {
     path: 'kyc',
     loadComponent: () =>
-      import('./kyc/verify-kyb/verify-kyb.component').then(
+      import('./features/kyc/verify-kyb/verify-kyb.component').then(
         (m) => m.VerifyKybComponent
       )
   },
   {
     path: 'dashboard',
     loadComponent: () =>
-      import('./dashboard/dashboard.component').then(
+      import('./features/dashboard/dashboard.component').then(
         (m) => m.DashboardComponent
       )
   }

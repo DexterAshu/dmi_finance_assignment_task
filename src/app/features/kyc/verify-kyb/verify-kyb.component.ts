@@ -2,9 +2,9 @@ import { Component, signal, computed, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { KycStepperComponent } from '../kyc-stepper/kyc-stepper.component';
-import { DocumentUploadComponent, FileMetadata } from '../document-upload/document-upload.component';
-import { SecondDocumentModalComponent } from '../second-document-modal/second-document-modal.component';
+import { KycStepperComponent } from '../components/kyc-stepper/kyc-stepper.component';
+import { DocumentUploadComponent, FileMetadata } from '../components/document-upload/document-upload.component';
+import { SecondDocumentModalComponent } from '../components/second-document-modal/second-document-modal.component';
 
 @Component({
   selector: 'app-verify-kyb',

@@ -30,26 +30,41 @@ This repository contains the complete frontend solution for the DMI Finance asse
 ```
 src/
 └── app/
-    ├── models/                 # Shared TypeScript interfaces & types
-    ├── services/               # Core data services
-    ├── shared/                 # Reusable UI components & layouts
-    │   └── status-badge/
-    ├── loan-applications/       # Part 1: Loan Application Tracker
-    │   ├── application-detail/
-    │   ├── credit-score-gauge/
-    │   ├── application-filters/
-    │   ├── loan-application-list/
-    │   ├── summary-strip/
-    │   └── loan-application-card/
-    ├── kyc/                    # Part 2: KYB Document Verification Flow
-    │   ├── verify-kyb/         # Main KYB container page component
-    │   ├── kyc-stepper/        # 5-step visual progress bar
-    │   ├── document-upload/    # Reusable file upload & validation box
-    │   └── second-document-modal/ # Second document prompt dialog
-    ├── dashboard/              # Part 3: Lead Management Dashboard (placeholder)
-    ├── app.component.ts        # Root layout with top navigation bar
-    ├── app.config.ts           # App providers configuration
-    └── app.routes.ts           # Navigation route configuration (/applications, /kyc)
+    ├── core/                           # Application-wide singletons & services
+    │   └── services/
+    │       └── search.service.ts
+    ├── shared/                         # Reusable UI widgets & pipes across features
+    │   ├── components/
+    │   │   └── status-badge/
+    │   └── pipes/
+    │       └── indian-currency.pipe.ts
+    ├── features/                       # Domain features
+    │   ├── loan-applications/          # Part 1: Loan Application Tracker Feature
+    │   │   ├── components/
+    │   │   │   ├── application-detail/
+    │   │   │   ├── application-filters/
+    │   │   │   ├── credit-score-gauge/
+    │   │   │   ├── loan-application-card/
+    │   │   │   └── summary-strip/
+    │   │   ├── models/                 # loan-application.model.ts
+    │   │   ├── services/               # loan-application.service.ts
+    │   │   └── loan-application-list/  # Container page component
+    │   ├── kyc/                        # Part 2: KYB Document Verification Flow Feature
+    │   │   ├── components/
+    │   │   │   ├── document-upload/
+    │   │   │   ├── kyc-stepper/
+    │   │   │   └── second-document-modal/
+    │   │   └── verify-kyb/             # Main KYB container page component
+    │   └── dashboard/                  # Part 3: Lead Management Dashboard Feature
+    │       ├── components/
+    │       │   ├── kpi-card/
+    │       │   └── lead-status-badge/
+    │       ├── models/                 # lead.model.ts
+    │       ├── services/               # lead.service.ts
+    │       └── dashboard.component.ts  # Main dashboard container component
+    ├── app.component.ts                # Root layout with top navigation bar
+    ├── app.config.ts                   # App providers configuration
+    └── app.routes.ts                   # Navigation route configuration
 ```
 
 ---
@@ -144,10 +159,10 @@ The assignment is divided into three parts:
 ## Loan Application Tracker (Part 1 Implementation)
 
 ### 1. Application List & Service Integration
-The `LoanApplicationListComponent` (`src/app/loan-applications/loan-application-list/`) retrieves loan records dynamically over HTTP from `json-server` via `LoanApplicationService.getApplications()`.
+The `LoanApplicationListComponent` (`src/app/features/loan-applications/loan-application-list/`) retrieves loan records dynamically over HTTP from `json-server` via `LoanApplicationService.getApplications()`.
 
 ### 2. Summary Strip & Metric Formulas
-The `SummaryStripComponent` (`src/app/loan-applications/summary-strip/`) computes real-time top-level metric counters based on the complete dataset:
+The `SummaryStripComponent` (`src/app/features/loan-applications/components/summary-strip/`) computes real-time top-level metric counters based on the complete dataset:
 - **Total Applications**: Count of all fetched application records (e.g. `20`).
 - **Pipeline Amount**: Sum of loan amounts for active pipeline applications (`Pending` + `Under Review`). Formatted as Indian Currency (e.g., `₹2,31,00,000`).
   $$\text{Pipeline Amount} = \sum (\text{amount} \text{ where status } \in \{\text{Pending}, \text{Under Review}\})$$
@@ -161,7 +176,7 @@ All filtering and sorting occur **100% client-side** in memory using Angular `co
 - **Sort Options**: `Applied Date — Newest First` (**Default**), `Applied Date — Oldest First`, `Loan Amount — High to Low`, `Loan Amount — Low to High`
 
 ### 4. Application Detail View & Side Drawer (Stage 05)
-Clicking any application card opens `ApplicationDetailComponent` (`src/app/loan-applications/application-detail/`) in a right slide-over drawer:
+Clicking any application card opens `ApplicationDetailComponent` (`src/app/features/loan-applications/components/application-detail/`) in a right slide-over drawer:
 - **Complete Field Display**: Application ID, Applicant Name, Requested Amount, Status Badge, Loan Type, Applied Date, Assigned Officer, and Underwriter Remarks.
 - **Visual Credit Score Gauge**: `CreditScoreGaugeComponent` renders a non-interactive SVG arc gauge mapping score ranges (300–900 scale) to color ratings (`Poor`, `Fair`, `Good`, `Excellent`).
 
@@ -173,10 +188,10 @@ Selecting a new status triggers a confirmation modal before applying local state
 ## KYB / Document Verification Flow (Part 2 — Stage 06 Implementation)
 
 ### 1. Route & Component Architecture
-The KYB verification feature is accessible via the `/kyc` route (`VerifyKybComponent` at `src/app/kyc/verify-kyb/`):
-- **Visual Stepper**: `KycStepperComponent` (`src/app/kyc/kyc-stepper/`) renders a 5-step progress indicator matching the Figma screens (Basic details → Loan offers → **Verify KYC** → Address & e-mandate → Sign agreement).
-- **Reusable Document Upload Box**: `DocumentUploadComponent` (`src/app/kyc/document-upload/`) encapsulates file selection, drag-and-drop, client-side validation, and uploaded file state display.
-- **Second Document Prompt Modal**: `SecondDocumentModalComponent` (`src/app/kyc/second-document-modal/`) handles the prompt dialog for secondary business registration documents.
+The KYB verification feature is accessible via the `/kyc` route (`VerifyKybComponent` at `src/app/features/kyc/verify-kyb/`):
+- **Visual Stepper**: `KycStepperComponent` (`src/app/features/kyc/components/kyc-stepper/`) renders a 5-step progress indicator matching the Figma screens (Basic details → Loan offers → **Verify KYC** → Address & e-mandate → Sign agreement).
+- **Reusable Document Upload Box**: `DocumentUploadComponent` (`src/app/features/kyc/components/document-upload/`) encapsulates file selection, drag-and-drop, client-side validation, and uploaded file state display.
+- **Second Document Prompt Modal**: `SecondDocumentModalComponent` (`src/app/features/kyc/components/second-document-modal/`) handles the prompt dialog for secondary business registration documents.
 
 ### 2. Form Controls & Validation
 - **Document Type Selection**: Options include `GST Certificate`, `Udyam Registration Certificate (URC)`, `Shop & Establishment Certificate`, `Business/ Trade License`, `FSSAI`, and `Import Export Certificate`.
@@ -202,7 +217,7 @@ Clicking `Continue` on the primary document opens the bottom-sheet prompt:
 ## Lead Management Dashboard (Part 3 — Stage 07 Implementation)
 
 ### 1. Overview & Route Navigation
-The Lead Management Dashboard is accessible at `/dashboard` (`DashboardComponent` at `src/app/dashboard/`):
+The Lead Management Dashboard is accessible at `/dashboard` (`DashboardComponent` at `src/app/features/dashboard/`):
 - **Branded Header & Welcome Banner**: Includes DMI Finance logo, global search input, welcome title, and user profile widget (`Samantha | DMI Finance`).
 - **Data-Driven Metric KPI Cards**: 4 KPI stat breakdown cards (`KpiCardComponent`) displaying stage totals derived dynamically from the loaded dataset.
 - **Lead Data Table**: Displays Lead Name, Lead ID, Lead Creation Date (formatted via `DatePipe`), and Lead Status with color-coded badges (`LeadStatusBadgeComponent`).

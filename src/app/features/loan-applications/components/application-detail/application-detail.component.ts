@@ -1,9 +1,9 @@
 import { Component, input, output, signal } from '@angular/core';
 import { CommonModule, DatePipe } from '@angular/common';
 import { LoanApplication, LoanStatus } from '../../models/loan-application.model';
-import { StatusBadgeComponent } from '../../shared/status-badge/status-badge.component';
+import { StatusBadgeComponent } from '../../../../shared/components/status-badge/status-badge.component';
 import { CreditScoreGaugeComponent } from '../credit-score-gauge/credit-score-gauge.component';
-import { IndianCurrencyPipe } from '../../shared/pipes/indian-currency.pipe';
+import { IndianCurrencyPipe } from '../../../../shared/pipes/indian-currency.pipe';
 
 @Component({
   selector: 'app-application-detail',

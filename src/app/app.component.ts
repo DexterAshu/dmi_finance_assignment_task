@@ -1,6 +1,6 @@
 import { Component, OnInit, signal, inject, ElementRef, HostListener } from '@angular/core';
 import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
-import { SearchService } from './services/search.service';
+import { SearchService } from './core/services/search.service';
 
 @Component({
   selector: 'app-root',

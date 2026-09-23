@@ -1,10 +1,10 @@
 import { Component, OnInit, signal, computed, inject } from '@angular/core';
 import { CommonModule, DatePipe } from '@angular/common';
-import { Lead, KpiCardGroup, SubStatusStage, TableLeadStatus } from '../models/lead.model';
-import { LeadService } from '../services/lead.service';
-import { KpiCardComponent } from './kpi-card/kpi-card.component';
-import { LeadStatusBadgeComponent } from './lead-status-badge/lead-status-badge.component';
-import { environment } from '../../environments/environment';
+import { Lead, KpiCardGroup, SubStatusStage, TableLeadStatus } from './models/lead.model';
+import { LeadService } from './services/lead.service';
+import { KpiCardComponent } from './components/kpi-card/kpi-card.component';
+import { LeadStatusBadgeComponent } from './components/lead-status-badge/lead-status-badge.component';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-dashboard',
