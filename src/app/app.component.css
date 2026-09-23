@@ -1,0 +1,70 @@
+.global-navbar {
+  background-color: #0f172a;
+  color: #ffffff;
+  border-bottom: 1px solid #1e293b;
+  position: sticky;
+  top: 0;
+  z-index: 30;
+}
+
+.nav-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0.85rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.brand-logo {
+  background-color: #2563eb;
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 0.85rem;
+  padding: 3px 8px;
+  border-radius: 6px;
+  letter-spacing: 0.05em;
+}
+
+.brand-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #f8fafc;
+  letter-spacing: -0.01em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.nav-link {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.45rem 0.9rem;
+  border-radius: 8px;
+  transition: all 0.15s ease;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+  background-color: #1e293b;
+}
+
+.nav-link.active {
+  color: #ffffff;
+  background-color: #2563eb;
+}
+
+.app-main-content {
+  min-height: calc(100vh - 60px);
+  background-color: #f8fafc;
+}

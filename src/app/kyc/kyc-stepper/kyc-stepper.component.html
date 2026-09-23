@@ -1,0 +1,25 @@
+<div class="stepper-container" role="navigation" aria-label="KYB Verification Progress">
+  <ol class="stepper-list">
+    @for (step of steps; track step.id; let isLast = $last) {
+      <li class="step-item" [ngClass]="'step-' + step.status">
+        <div class="step-header">
+          <div class="step-circle" [attr.aria-current]="step.status === 'active' ? 'step' : null">
+            @if (step.status === 'completed') {
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+              </svg>
+            } @else if (step.status === 'active') {
+              <div class="inner-dot"></div>
+            } @else {
+              <span class="step-number">{{ step.id }}</span>
+            }
+          </div>
+          @if (!isLast) {
+            <div class="step-connector" [class.connector-completed]="step.status === 'completed'"></div>
+          }
+        </div>
+        <span class="step-label">{{ step.label }}</span>
+      </li>
+    }
+  </ol>
+</div>

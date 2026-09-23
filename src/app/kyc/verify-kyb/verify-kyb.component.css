@@ -1,0 +1,266 @@
+.kyc-page-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top-nav-bar {
+  width: 100%;
+  max-width: 480px;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.btn-back-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: none;
+  border: none;
+  color: #2563eb;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0.35rem 0.5rem;
+  border-radius: 6px;
+  transition: background-color 0.15s ease;
+}
+
+.btn-back-nav:hover {
+  background-color: #eff6ff;
+}
+
+.btn-back-nav svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Constrained mobile-first layout matching Figma screen dimensions */
+.kyc-card-layout {
+  width: 100%;
+  max-width: 480px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  padding: 1.75rem 1.5rem;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.06);
+}
+
+.kyc-header {
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.kyc-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.kyc-form-content {
+  margin-top: 1rem;
+}
+
+.form-step-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.step-instruction {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 1.25rem 0;
+  line-height: 1.4;
+}
+
+.kyc-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.form-label {
+  font-size: 0.775rem;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.form-select,
+.form-input {
+  width: 100%;
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 0.7rem 0.9rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0f172a;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.form-select:focus,
+.form-input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.upload-field {
+  margin-top: 0.25rem;
+}
+
+.form-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.btn-continue {
+  width: 100%;
+  background-color: #2563eb;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-continue:hover:not(:disabled) {
+  background-color: #1d4ed8;
+}
+
+.btn-continue:disabled {
+  background-color: #cbd5e1;
+  color: #94a3b8;
+  cursor: not-allowed;
+}
+
+.security-note {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.775rem;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.security-note svg {
+  width: 14px;
+  height: 14px;
+  color: #16a34a;
+}
+
+/* Complete View Styling */
+.complete-view {
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem 0 0.5rem 0;
+}
+
+.success-icon-badge {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: #dcfce7;
+  color: #16a34a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.success-icon-badge svg {
+  width: 32px;
+  height: 32px;
+}
+
+.complete-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 0.4rem 0;
+}
+
+.complete-subtitle {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin: 0 0 1.5rem 0;
+}
+
+.verified-docs-summary {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.doc-summary-card {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+  text-align: left;
+}
+
+.doc-summary-type {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.doc-summary-num {
+  font-size: 0.775rem;
+  font-weight: 600;
+  color: #2563eb;
+}
+
+.doc-summary-file {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.complete-actions {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.btn-restart {
+  width: 100%;
+  background: none;
+  color: #475569;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.65rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  cursor: pointer;
+}
+
+.btn-restart:hover {
+  background-color: #f1f5f9;
+}

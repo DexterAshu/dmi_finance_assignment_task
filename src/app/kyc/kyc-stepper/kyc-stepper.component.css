@@ -1,0 +1,116 @@
+.stepper-container {
+  width: 100%;
+  padding: 1.25rem 0;
+  margin-bottom: 1.5rem;
+}
+
+.stepper-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.step-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.step-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.step-circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: all 0.2s ease;
+}
+
+.step-circle svg {
+  width: 14px;
+  height: 14px;
+  color: #ffffff;
+}
+
+.inner-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #2563eb;
+}
+
+.step-number {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #94a3b8;
+}
+
+/* Connectors between steps */
+.step-connector {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  background-color: #e2e8f0;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.connector-completed {
+  background-color: #2563eb;
+}
+
+/* Step Status Styles */
+.step-completed .step-circle {
+  background-color: #2563eb;
+  border: 2px solid #2563eb;
+}
+
+.step-active .step-circle {
+  background-color: #ffffff;
+  border: 2px solid #2563eb;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+}
+
+.step-pending .step-circle {
+  background-color: #ffffff;
+  border: 2px solid #cbd5e1;
+}
+
+.step-label {
+  font-size: 0.725rem;
+  font-weight: 600;
+  color: #64748b;
+  text-align: center;
+  line-height: 1.25;
+  max-width: 72px;
+}
+
+.step-completed .step-label,
+.step-active .step-label {
+  color: #1e293b;
+}
+
+@media (max-width: 480px) {
+  .step-label {
+    font-size: 0.65rem;
+    max-width: 56px;
+  }
+}

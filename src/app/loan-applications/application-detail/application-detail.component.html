@@ -1,0 +1,99 @@
+<!-- Backdrop Overlay -->
+<div class="drawer-backdrop" (click)="onClose()" aria-hidden="true"></div>
+
+<!-- Right Slide-Over Panel -->
+<div class="drawer-panel" role="dialog" aria-labelledby="drawer-title" aria-modal="true">
+  <!-- Drawer Header -->
+  <div class="drawer-header">
+    <div class="header-titles">
+      <span class="drawer-subtitle">{{ application().id }}</span>
+      <h2 id="drawer-title" class="drawer-title">{{ application().applicantName }}</h2>
+    </div>
+    <button class="btn-close" (click)="onClose()" aria-label="Close application details">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Drawer Body -->
+  <div class="drawer-body">
+    <!-- Status & Amount Header Section -->
+    <div class="summary-section">
+      <div class="amount-badge-row">
+        <div class="detail-amount-group">
+          <span class="section-label">Requested Loan Amount</span>
+          <span class="detail-amount-value">{{ application().amount | currency:'INR':'symbol':'1.0-0' }}</span>
+        </div>
+        <app-status-badge [status]="application().status"></app-status-badge>
+      </div>
+    </div>
+
+    <!-- Visual Credit Score Gauge -->
+    <div class="detail-section">
+      <app-credit-score-gauge [score]="application().creditScore"></app-credit-score-gauge>
+    </div>
+
+    <!-- Application Metadata Grid -->
+    <div class="detail-section meta-grid">
+      <div class="meta-item">
+        <span class="meta-label">Loan Type</span>
+        <span class="meta-value">{{ application().loanType }} Loan</span>
+      </div>
+
+      <div class="meta-item">
+        <span class="meta-label">Applied Date</span>
+        <span class="meta-value">{{ application().appliedDate | date:'dd MMM yyyy' }}</span>
+      </div>
+
+      <div class="meta-item">
+        <span class="meta-label">Assigned Officer</span>
+        <span class="meta-value">{{ application().assignedTo }}</span>
+      </div>
+
+      <div class="meta-item full-width">
+        <span class="meta-label">Underwriter Remarks</span>
+        <p class="meta-value remarks-box">{{ application().remarks }}</p>
+      </div>
+    </div>
+
+    <!-- Status Update Action Section -->
+    <div class="detail-section status-update-box">
+      <label for="status-update-select" class="section-label">Update Application Status (UI Only)</label>
+      <div class="status-select-wrapper">
+        <select
+          id="status-update-select"
+          class="status-update-select"
+          [value]="pendingStatus() || application().status"
+          (change)="onStatusSelect($event)"
+          aria-label="Update loan application status">
+          @for (st of statusOptions; track st) {
+            <option [value]="st">{{ st }}</option>
+          }
+        </select>
+      </div>
+      <p class="status-help-text">Selecting a new status requires confirmation before taking effect locally.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Status Update Confirmation Modal -->
+@if (showConfirmationModal()) {
+  <div class="confirmation-backdrop" aria-hidden="true"></div>
+  <div class="confirmation-dialog" role="alertdialog" aria-labelledby="confirm-title" aria-describedby="confirm-desc">
+    <div class="dialog-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.008v.008H12v-.008Z" />
+      </svg>
+    </div>
+    <h3 id="confirm-title" class="dialog-title">Confirm Status Change</h3>
+    <p id="confirm-desc" class="dialog-message">
+      Are you sure you want to change the status of <strong>{{ application().applicantName }}</strong>'s loan application from 
+      <span class="status-chip">{{ application().status }}</span> to <span class="status-chip highlight">{{ pendingStatus() }}</span>?
+    </p>
+    <div class="dialog-actions">
+      <button class="btn-cancel" (click)="cancelStatusChange()">Cancel</button>
+      <button class="btn-confirm" (click)="confirmStatusChange()">Confirm Update</button>
+    </div>
+  </div>
+}

@@ -1,0 +1,34 @@
+<div class="gauge-card" [ngClass]="ratingColorClass()">
+  <div class="gauge-header">
+    <span class="gauge-title">CIBIL Credit Score</span>
+    <span class="rating-badge">{{ ratingCategory() }}</span>
+  </div>
+
+  <div class="gauge-visual">
+    <!-- SVG Semi-Circle Arc Gauge -->
+    <svg class="gauge-svg" viewBox="0 0 120 70">
+      <!-- Background Arc Track -->
+      <path
+        class="gauge-track"
+        d="M 10 60 A 50 50 0 0 1 110 60"
+        fill="none"
+        stroke-width="12"
+        stroke-linecap="round" />
+      
+      <!-- Colored Score Fill Arc -->
+      <path
+        class="gauge-fill"
+        d="M 10 60 A 50 50 0 0 1 110 60"
+        fill="none"
+        stroke-width="12"
+        stroke-linecap="round"
+        [style.strokeDasharray]="157"
+        [style.strokeDashoffset]="157 - (157 * normalizedPercentage() / 100)" />
+    </svg>
+
+    <div class="gauge-value-display">
+      <span class="score-number">{{ score() }}</span>
+      <span class="score-scale">300 – 900</span>
+    </div>
+  </div>
+</div>

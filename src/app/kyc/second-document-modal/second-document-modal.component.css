@@ -1,0 +1,125 @@
+.prompt-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(3px);
+  z-index: 60;
+  animation: fadeIn 0.18s ease-out;
+}
+
+.prompt-dialog {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 480px;
+  background-color: #ffffff;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  padding: 2.25rem 1.75rem 2rem 1.75rem;
+  z-index: 70;
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  animation: slideUp 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (min-width: 640px) {
+  .prompt-dialog {
+    bottom: auto;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    width: 90%;
+    max-width: 420px;
+    animation: scaleUp 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translate(-50%, 100%); }
+  to { transform: translate(-50%, 0); }
+}
+
+@keyframes scaleUp {
+  from { transform: translate(-50%, -50%) scale(0.9); opacity: 0; }
+  to { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
+
+.prompt-icon-area {
+  margin-bottom: 1.25rem;
+}
+
+.folder-illustration {
+  width: 68px;
+  height: 68px;
+  border-radius: 20px;
+  background-color: #e0e7ff;
+  color: #4f46e5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.folder-illustration svg {
+  width: 38px;
+  height: 38px;
+}
+
+.prompt-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 1.75rem 0;
+  line-height: 1.35;
+}
+
+.prompt-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.btn-primary-upload {
+  width: 100%;
+  background-color: #2563eb;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.btn-primary-upload:hover {
+  background-color: #1d4ed8;
+}
+
+.btn-secondary-skip {
+  width: 100%;
+  background: none;
+  color: #2563eb;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0.65rem 1rem;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.btn-secondary-skip:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}

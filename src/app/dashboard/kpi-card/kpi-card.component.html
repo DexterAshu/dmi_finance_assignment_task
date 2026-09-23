@@ -1,0 +1,36 @@
+<div class="kpi-card-box" [ngClass]="'theme-' + cardGroup().colorTheme">
+  <div class="kpi-card-header">
+    <div class="kpi-card-icon">
+      <!-- Dynamic Icon depending on theme -->
+      @if (cardGroup().colorTheme === 'green') {
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+        </svg>
+      } @else if (cardGroup().colorTheme === 'blue') {
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      } @else if (cardGroup().colorTheme === 'slate') {
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751A11.959 11.959 0 0112 2.714z" />
+        </svg>
+      } @else {
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A12 12 0 0015.75 17.25h.75m-12.75-12.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V4.5M3.75 4.5h.008v.008H3.75V4.5z" />
+        </svg>
+      }
+    </div>
+  </div>
+
+  <div class="kpi-rows-container">
+    @for (item of cardGroup().items; track item.label) {
+      <div class="kpi-row-item" [class.highlighted-row]="item.highlighted">
+        <div class="kpi-row-left">
+          <span class="radio-indicator" [class.checked]="item.highlighted"></span>
+          <span class="kpi-label">{{ item.label }}</span>
+        </div>
+        <span class="kpi-count">{{ item.count }}</span>
+      </div>
+    }
+  </div>
+</div>

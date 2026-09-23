@@ -1,0 +1,193 @@
+<div class="kyc-page-container">
+  <!-- Top Navigation Bar -->
+  <div class="top-nav-bar">
+    <button type="button" class="btn-back-nav" (click)="navigateToApplications()">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+      </svg>
+      <span>Back to Loan Applications</span>
+    </button>
+  </div>
+
+  <!-- Mobile/Constrained Container matching Figma layout -->
+  <div class="kyc-card-layout">
+    <!-- Header -->
+    <header class="kyc-header">
+      <h1 class="kyc-title">Verify Your KYB</h1>
+    </header>
+
+    <!-- Multi-Step Progress Bar -->
+    <app-kyc-stepper [activeStepId]="3"></app-kyc-stepper>
+
+    <!-- Form Content Area -->
+    <div class="kyc-form-content">
+      <!-- Step 1: Primary Document Upload Form -->
+      @if (activeStep() === 1) {
+        <div class="form-step-container">
+          <p class="step-instruction">Please upload your business registration document</p>
+
+          <form [formGroup]="primaryForm" class="kyc-form" (ngSubmit)="onPrimaryContinue()">
+            <!-- Document Type Dropdown -->
+            <div class="form-field">
+              <label for="primary-doc-type" class="form-label">Document Type</label>
+              <select
+                id="primary-doc-type"
+                formControlName="docType"
+                class="form-select"
+                aria-label="Select Document Type">
+                @for (type of documentTypes; track type) {
+                  <option [value]="type">{{ type }}</option>
+                }
+              </select>
+            </div>
+
+            <!-- Document Number Input -->
+            <div class="form-field">
+              <label for="primary-doc-number" class="form-label">Document number</label>
+              <input
+                id="primary-doc-number"
+                type="text"
+                formControlName="docNumber"
+                class="form-input"
+                placeholder="Enter document number (e.g. 06AAGCL3497D1Z9)"
+                aria-label="Enter Document Number" />
+            </div>
+
+            <!-- Reusable File Upload Component -->
+            <div class="form-field upload-field">
+              <app-document-upload
+                [currentFile]="primaryFile()"
+                (fileSelected)="onPrimaryFileSelected($event)"
+                (fileRemoved)="onPrimaryFileRemoved()">
+              </app-document-upload>
+            </div>
+
+            <!-- Form Actions & Footer -->
+            <div class="form-actions">
+              <button
+                type="submit"
+                class="btn-continue"
+                [disabled]="!isPrimaryContinueValid()">
+                Continue
+              </button>
+
+              <div class="security-note">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751A11.959 11.959 0 0112 2.714z" />
+                </svg>
+                <span>Your information is secure</span>
+              </div>
+            </div>
+          </form>
+        </div>
+      }
+
+      <!-- Step 2: Second Business Document Form -->
+      @if (activeStep() === 2) {
+        <div class="form-step-container">
+          <p class="step-instruction">Please upload your second business registration document</p>
+
+          <form [formGroup]="secondForm" class="kyc-form" (ngSubmit)="onSecondContinue()">
+            <!-- Document Type Dropdown -->
+            <div class="form-field">
+              <label for="second-doc-type" class="form-label">Document Type</label>
+              <select
+                id="second-doc-type"
+                formControlName="docType"
+                class="form-select"
+                aria-label="Select Second Document Type">
+                @for (type of documentTypes; track type) {
+                  <option [value]="type">{{ type }}</option>
+                }
+              </select>
+            </div>
+
+            <!-- Document Number Input -->
+            <div class="form-field">
+              <label for="second-doc-number" class="form-label">Document number</label>
+              <input
+                id="second-doc-number"
+                type="text"
+                formControlName="docNumber"
+                class="form-input"
+                placeholder="Enter document number (e.g. UDYAM-YY-02-1234567)"
+                aria-label="Enter Second Document Number" />
+            </div>
+
+            <!-- Reusable File Upload Component -->
+            <div class="form-field upload-field">
+              <app-document-upload
+                [currentFile]="secondFile()"
+                (fileSelected)="onSecondFileSelected($event)"
+                (fileRemoved)="onSecondFileRemoved()">
+              </app-document-upload>
+            </div>
+
+            <!-- Form Actions & Footer -->
+            <div class="form-actions">
+              <button
+                type="submit"
+                class="btn-continue"
+                [disabled]="!isSecondContinueValid()">
+                Continue
+              </button>
+
+              <div class="security-note">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751A11.959 11.959 0 0112 2.714z" />
+                </svg>
+                <span>Your information is secure</span>
+              </div>
+            </div>
+          </form>
+        </div>
+      }
+
+      <!-- Step 3: Verification Completed View -->
+      @if (activeStep() === 3) {
+        <div class="form-step-container complete-view">
+          <div class="success-icon-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+            </svg>
+          </div>
+          <h2 class="complete-title">KYB Verification Completed</h2>
+          <p class="complete-subtitle">Your business registration documents have been verified locally.</p>
+
+          <div class="verified-docs-summary">
+            <div class="doc-summary-card">
+              <span class="doc-summary-type">{{ primaryForm.value.docType }}</span>
+              <span class="doc-summary-num">No: {{ primaryForm.value.docNumber }}</span>
+              <span class="doc-summary-file">{{ primaryFile()?.name }} ({{ primaryFile()?.formattedSize }})</span>
+            </div>
+
+            @if (secondFile()) {
+              <div class="doc-summary-card">
+                <span class="doc-summary-type">{{ secondForm.value.docType }}</span>
+                <span class="doc-summary-num">No: {{ secondForm.value.docNumber }}</span>
+                <span class="doc-summary-file">{{ secondFile()?.name }} ({{ secondFile()?.formattedSize }})</span>
+              </div>
+            }
+          </div>
+
+          <div class="complete-actions">
+            <button class="btn-continue" (click)="navigateToApplications()">
+              Return to Loan Applications
+            </button>
+            <button class="btn-restart" (click)="resetFlow()">
+              Verify Another Document
+            </button>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>
+
+<!-- Prompt Modal for Second Document -->
+@if (showSecondDocPrompt()) {
+  <app-second-document-modal
+    (uploadSecond)="onUploadSecondChosen()"
+    (skipAndProceed)="onSkipSecondChosen()">
+  </app-second-document-modal>
+}

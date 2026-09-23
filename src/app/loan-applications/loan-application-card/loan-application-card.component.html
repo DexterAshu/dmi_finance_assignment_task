@@ -1,0 +1,36 @@
+<div
+  class="card-container"
+  tabindex="0"
+  role="button"
+  [attr.aria-label]="'View details for application ' + application().id + ' by ' + application().applicantName"
+  (click)="onCardSelect()"
+  (keydown)="onKeyDown($event)">
+  <div class="card-header">
+    <div class="applicant-info">
+      <h3 class="applicant-name">{{ application().applicantName }}</h3>
+      <span class="application-id">{{ application().id }}</span>
+    </div>
+    <app-status-badge [status]="application().status"></app-status-badge>
+  </div>
+
+  <div class="card-body">
+    <div class="amount-container">
+      <span class="field-label">Loan Amount</span>
+      <span class="loan-amount">{{ application().amount | currency:'INR':'symbol':'1.0-0' }}</span>
+    </div>
+
+    <div class="card-details-grid">
+      <div class="detail-item">
+        <span class="field-label">Loan Type</span>
+        <span class="loan-type-tag" [ngClass]="'type-' + application().loanType.toLowerCase()">
+          {{ application().loanType }}
+        </span>
+      </div>
+
+      <div class="detail-item">
+        <span class="field-label">Applied Date</span>
+        <span class="detail-value">{{ application().appliedDate | date:'dd MMM yyyy' }}</span>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,426 @@
+{
+  "applications": [
+    {
+      "id": "LA-2024-0041",
+      "applicantName": "Priya Sharma",
+      "loanType": "Personal",
+      "amount": 450000,
+      "status": "Under Review",
+      "appliedDate": "2024-11-03",
+      "creditScore": 724,
+      "assignedTo": "Rahul Menon",
+      "remarks": "Salary slips pending verification"
+    },
+    {
+      "id": "LA-2024-0042",
+      "applicantName": "Rajesh Kumar",
+      "loanType": "Home",
+      "amount": 2500000,
+      "status": "Approved",
+      "appliedDate": "2024-10-15",
+      "creditScore": 795,
+      "assignedTo": "Ananya Sen",
+      "remarks": "Property valuation complete"
+    },
+    {
+      "id": "LA-2024-0043",
+      "applicantName": "Aarav Patel",
+      "loanType": "Business",
+      "amount": 1800000,
+      "status": "Pending",
+      "appliedDate": "2024-11-10",
+      "creditScore": 680,
+      "assignedTo": "Vikas Verma",
+      "remarks": "Initial KYC documents submitted"
+    },
+    {
+      "id": "LA-2024-0044",
+      "applicantName": "Meera Nair",
+      "loanType": "Personal",
+      "amount": 300000,
+      "status": "Rejected",
+      "appliedDate": "2024-09-28",
+      "creditScore": 580,
+      "assignedTo": "Rahul Menon",
+      "remarks": "Low credit score below threshold"
+    },
+    {
+      "id": "LA-2024-0045",
+      "applicantName": "Siddharth Malhotra",
+      "loanType": "Home",
+      "amount": 4200000,
+      "status": "Under Review",
+      "appliedDate": "2024-11-01",
+      "creditScore": 760,
+      "assignedTo": "Ananya Sen",
+      "remarks": "Income tax returns verification in progress"
+    },
+    {
+      "id": "LA-2024-0046",
+      "applicantName": "Kavita Reddy",
+      "loanType": "Business",
+      "amount": 950000,
+      "status": "Approved",
+      "appliedDate": "2024-10-22",
+      "creditScore": 810,
+      "assignedTo": "Vikas Verma",
+      "remarks": "GST returns verified and cleared"
+    },
+    {
+      "id": "LA-2024-0047",
+      "applicantName": "Rohan Gupta",
+      "loanType": "Personal",
+      "amount": 600000,
+      "status": "Pending",
+      "appliedDate": "2024-11-12",
+      "creditScore": 710,
+      "assignedTo": "Rahul Menon",
+      "remarks": "Bank statements awaited"
+    },
+    {
+      "id": "LA-2024-0048",
+      "applicantName": "Sneha Roy",
+      "loanType": "Home",
+      "amount": 3500000,
+      "status": "Approved",
+      "appliedDate": "2024-10-05",
+      "creditScore": 785,
+      "assignedTo": "Ananya Sen",
+      "remarks": "Disbursement scheduled for next week"
+    },
+    {
+      "id": "LA-2024-0049",
+      "applicantName": "Vikramaditya Singh",
+      "loanType": "Business",
+      "amount": 3000000,
+      "status": "Rejected",
+      "appliedDate": "2024-09-15",
+      "creditScore": 620,
+      "assignedTo": "Vikas Verma",
+      "remarks": "Existing high Debt-to-Income ratio"
+    },
+    {
+      "id": "LA-2024-0050",
+      "applicantName": "Deepika Joshi",
+      "loanType": "Personal",
+      "amount": 200000,
+      "status": "Approved",
+      "appliedDate": "2024-11-05",
+      "creditScore": 740,
+      "assignedTo": "Rahul Menon",
+      "remarks": "Pre-approved personal loan processed"
+    },
+    {
+      "id": "LA-2024-0051",
+      "applicantName": "Amitabh Deshmukh",
+      "loanType": "Home",
+      "amount": 5000000,
+      "status": "Under Review",
+      "appliedDate": "2024-11-08",
+      "creditScore": 755,
+      "assignedTo": "Ananya Sen",
+      "remarks": "Legal clearance report pending"
+    },
+    {
+      "id": "LA-2024-0052",
+      "applicantName": "Pooja Banerjee",
+      "loanType": "Business",
+      "amount": 1200000,
+      "status": "Pending",
+      "appliedDate": "2024-11-14",
+      "creditScore": 690,
+      "assignedTo": "Vikas Verma",
+      "remarks": "Business registration doc submitted"
+    },
+    {
+      "id": "LA-2024-0053",
+      "applicantName": "Karan Mehra",
+      "loanType": "Personal",
+      "amount": 750000,
+      "status": "Under Review",
+      "appliedDate": "2024-10-30",
+      "creditScore": 715,
+      "assignedTo": "Rahul Menon",
+      "remarks": "Employer confirmation pending"
+    },
+    {
+      "id": "LA-2024-0054",
+      "applicantName": "Shalini Iyer",
+      "loanType": "Home",
+      "amount": 2800000,
+      "status": "Rejected",
+      "appliedDate": "2024-09-20",
+      "creditScore": 590,
+      "assignedTo": "Ananya Sen",
+      "remarks": "Incomplete documentation submitted"
+    },
+    {
+      "id": "LA-2024-0055",
+      "applicantName": "Nikhil Aggarwal",
+      "loanType": "Business",
+      "amount": 2200000,
+      "status": "Approved",
+      "appliedDate": "2024-10-18",
+      "creditScore": 820,
+      "assignedTo": "Vikas Verma",
+      "remarks": "Sanction letter issued"
+    },
+    {
+      "id": "LA-2024-0056",
+      "applicantName": "Neha Kulkarni",
+      "loanType": "Personal",
+      "amount": 500000,
+      "status": "Pending",
+      "appliedDate": "2024-11-11",
+      "creditScore": 675,
+      "assignedTo": "Rahul Menon",
+      "remarks": "Form 16 requested"
+    },
+    {
+      "id": "LA-2024-0057",
+      "applicantName": "Varun Saxena",
+      "loanType": "Home",
+      "amount": 3800000,
+      "status": "Under Review",
+      "appliedDate": "2024-11-04",
+      "creditScore": 730,
+      "assignedTo": "Ananya Sen",
+      "remarks": "Technical evaluation in progress"
+    },
+    {
+      "id": "LA-2024-0058",
+      "applicantName": "Anjali Tripathi",
+      "loanType": "Business",
+      "amount": 1500000,
+      "status": "Approved",
+      "appliedDate": "2024-10-25",
+      "creditScore": 770,
+      "assignedTo": "Vikas Verma",
+      "remarks": "Approved with 10.5% interest rate"
+    },
+    {
+      "id": "LA-2024-0059",
+      "applicantName": "Gaurav Choudhury",
+      "loanType": "Personal",
+      "amount": 350000,
+      "status": "Approved",
+      "appliedDate": "2024-10-12",
+      "creditScore": 750,
+      "assignedTo": "Rahul Menon",
+      "remarks": "Fast-track approval completed"
+    },
+    {
+      "id": "LA-2024-0060",
+      "applicantName": "Divya Nambiar",
+      "loanType": "Home",
+      "amount": 4800000,
+      "status": "Pending",
+      "appliedDate": "2024-11-13",
+      "creditScore": 705,
+      "assignedTo": "Ananya Sen",
+      "remarks": "Application logged, awaiting queue"
+    }
+  ],
+  "leads": [
+    {
+      "id": "LD-001",
+      "leadName": "Finverge Labs",
+      "leadId": "DMI1938WK2",
+      "leadCreationDate": "2025-07-06",
+      "status": "Pending",
+      "subStatus": "Pending for Submission"
+    },
+    {
+      "id": "LD-002",
+      "leadName": "Zentora Tech",
+      "leadId": "DMI9283KWJ",
+      "leadCreationDate": "2025-07-05",
+      "status": "Active",
+      "subStatus": "Lead Submitted"
+    },
+    {
+      "id": "LD-003",
+      "leadName": "CredoraX Solutions",
+      "leadId": "DMI922JK70",
+      "leadCreationDate": "2025-07-05",
+      "status": "Rejected",
+      "subStatus": "Dedupe Pass"
+    },
+    {
+      "id": "LD-004",
+      "leadName": "BharatNest Ventures",
+      "leadId": "DMI922JK71",
+      "leadCreationDate": "2025-07-05",
+      "status": "Disbursed",
+      "subStatus": "Disbursement"
+    },
+    {
+      "id": "LD-005",
+      "leadName": "NirogGenix Health",
+      "leadId": "DMI922JK72",
+      "leadCreationDate": "2025-07-05",
+      "status": "Active",
+      "subStatus": "Decision Approved"
+    },
+    {
+      "id": "LD-006",
+      "leadName": "YantraGrid Systems",
+      "leadId": "DMI922JK73",
+      "leadCreationDate": "2025-07-05",
+      "status": "Pending",
+      "subStatus": "Decision Trigger Initiate"
+    },
+    {
+      "id": "LD-007",
+      "leadName": "Aayati Digital",
+      "leadId": "DMI922JK74",
+      "leadCreationDate": "2025-07-05",
+      "status": "Active",
+      "subStatus": "KYC Approved"
+    },
+    {
+      "id": "LD-008",
+      "leadName": "Vridhi AI Pvt Ltd",
+      "leadId": "DMI922JK75",
+      "leadCreationDate": "2025-07-05",
+      "status": "Pending",
+      "subStatus": "Mandate Registered"
+    },
+    {
+      "id": "LD-009",
+      "leadName": "Tatsam Mobility",
+      "leadId": "DMI922JK76",
+      "leadCreationDate": "2025-07-05",
+      "status": "Disbursed",
+      "subStatus": "Agreement Signed"
+    },
+    {
+      "id": "LD-010",
+      "leadName": "KuberPay Technologies",
+      "leadId": "DMI922JK77",
+      "leadCreationDate": "2025-07-04",
+      "status": "Active",
+      "subStatus": "Disbursement Initiated"
+    },
+    {
+      "id": "LD-011",
+      "leadName": "OmniLogistics India",
+      "leadId": "DMI922JK78",
+      "leadCreationDate": "2025-07-04",
+      "status": "Pending",
+      "subStatus": "Pending for Submission"
+    },
+    {
+      "id": "LD-012",
+      "leadName": "Starlight Agritech",
+      "leadId": "DMI922JK79",
+      "leadCreationDate": "2025-07-04",
+      "status": "Active",
+      "subStatus": "Offer Accepted"
+    },
+    {
+      "id": "LD-013",
+      "leadName": "CloudScale Systems",
+      "leadId": "DMI922JK80",
+      "leadCreationDate": "2025-07-03",
+      "status": "Rejected",
+      "subStatus": "Lead Submitted"
+    },
+    {
+      "id": "LD-014",
+      "leadName": "Nexus Robotics",
+      "leadId": "DMI922JK81",
+      "leadCreationDate": "2025-07-03",
+      "status": "Disbursed",
+      "subStatus": "Disbursement"
+    },
+    {
+      "id": "LD-015",
+      "leadName": "GreenPulse Energy",
+      "leadId": "DMI922JK82",
+      "leadCreationDate": "2025-07-03",
+      "status": "Active",
+      "subStatus": "KYC Approved"
+    },
+    {
+      "id": "LD-016",
+      "leadName": "Vortex BioPharma",
+      "leadId": "DMI922JK83",
+      "leadCreationDate": "2025-07-02",
+      "status": "Pending",
+      "subStatus": "Decision Trigger Initiate"
+    },
+    {
+      "id": "LD-017",
+      "leadName": "Aura Fintech",
+      "leadId": "DMI922JK84",
+      "leadCreationDate": "2025-07-02",
+      "status": "Active",
+      "subStatus": "Mandate Registered"
+    },
+    {
+      "id": "LD-018",
+      "leadName": "Zenith EduCorp",
+      "leadId": "DMI922JK85",
+      "leadCreationDate": "2025-07-01",
+      "status": "Disbursed",
+      "subStatus": "Disbursement Initiated"
+    },
+    {
+      "id": "LD-019",
+      "leadName": "Quant edge Trading",
+      "leadId": "DMI922JK86",
+      "leadCreationDate": "2025-07-01",
+      "status": "Active",
+      "subStatus": "Agreement Signed"
+    },
+    {
+      "id": "LD-020",
+      "leadName": "Vedic Life Sciences",
+      "leadId": "DMI922JK87",
+      "leadCreationDate": "2025-06-30",
+      "status": "Pending",
+      "subStatus": "Pending for Submission"
+    },
+    {
+      "id": "LD-021",
+      "leadName": "HyperDrive Logistics",
+      "leadId": "DMI922JK88",
+      "leadCreationDate": "2025-06-30",
+      "status": "Active",
+      "subStatus": "Decision Approved"
+    },
+    {
+      "id": "LD-022",
+      "leadName": "Solaris Solar Power",
+      "leadId": "DMI922JK89",
+      "leadCreationDate": "2025-06-29",
+      "status": "Disbursed",
+      "subStatus": "Disbursement"
+    },
+    {
+      "id": "LD-023",
+      "leadName": "MetaMind Software",
+      "leadId": "DMI922JK90",
+      "leadCreationDate": "2025-06-29",
+      "status": "Active",
+      "subStatus": "Offer Accepted"
+    },
+    {
+      "id": "LD-024",
+      "leadName": "Paramount Housing",
+      "leadId": "DMI922JK91",
+      "leadCreationDate": "2025-06-28",
+      "status": "Rejected",
+      "subStatus": "Dedupe Pass"
+    },
+    {
+      "id": "LD-025",
+      "leadName": "Optima Healthcare",
+      "leadId": "DMI922JK92",
+      "leadCreationDate": "2025-06-28",
+      "status": "Active",
+      "subStatus": "KYC Approved"
+    }
+  ]
+}
