@@ -13,6 +13,109 @@ This repository contains the complete frontend solution for the DMI Finance asse
 
 ---
 
+## Technology Stack
+
+* **Framework**: Angular 20 (Standalone Components, no `NgModule` bloat)
+* **Language**: TypeScript 5.x
+* **State Management**: Angular Signals (`signal`, `computed`)
+* **API / HTTP**: Angular `HttpClient` (`provideHttpClient`)
+* **Forms**: Angular Reactive Forms (`FormBuilder`, `Validators`)
+* **Styling**: Modern Vanilla CSS / SCSS
+* **Mock Backend**: `json-server` (REST API serving `db.json`)
+
+---
+
+## Project Structure
+
+```
+src/
+└── app/
+    ├── models/                 # Shared TypeScript interfaces & types
+    ├── services/               # Core data services
+    ├── shared/                 # Reusable UI components & layouts
+    │   └── status-badge/
+    ├── loan-applications/       # Part 1: Loan Application Tracker
+    │   ├── application-detail/
+    │   ├── credit-score-gauge/
+    │   ├── application-filters/
+    │   ├── loan-application-list/
+    │   ├── summary-strip/
+    │   └── loan-application-card/
+    ├── kyc/                    # Part 2: KYB Document Verification Flow
+    │   ├── verify-kyb/         # Main KYB container page component
+    │   ├── kyc-stepper/        # 5-step visual progress bar
+    │   ├── document-upload/    # Reusable file upload & validation box
+    │   └── second-document-modal/ # Second document prompt dialog
+    ├── dashboard/              # Part 3: Lead Management Dashboard (placeholder)
+    ├── app.component.ts        # Root layout with top navigation bar
+    ├── app.config.ts           # App providers configuration
+    └── app.routes.ts           # Navigation route configuration (/applications, /kyc)
+```
+
+---
+
+## Development Setup
+
+### Prerequisites
+- **Node.js**: v18.x or higher (Recommended: v20+)
+- **npm**: v9.x or higher
+- **Angular CLI**: v20+ (`npm install -g @angular/cli`)
+
+---
+
+## Installation
+
+```bash
+# Clone the repository
+git clone <repository-url>
+
+# Navigate into the project folder
+cd DMI\ Finance_Assignment_task
+
+# Install project dependencies
+npm install
+```
+
+---
+
+## Running the Application
+
+### 1. Start the Mock REST API (Port 3000)
+Launch `json-server` watching `db.json`:
+
+```bash
+npm run mock-api
+```
+
+The mock REST API endpoint is available at:
+`GET http://localhost:3000/applications`
+
+### 2. Start the Angular Development Server (Port 4200)
+In a separate terminal:
+
+```bash
+npm start
+```
+
+Navigate to `http://localhost:4200/` in your browser.
+
+- **Part 1 (Loan Applications)**: `http://localhost:4200/applications`
+- **Part 2 (KYB Verification)**: `http://localhost:4200/kyc`
+
+---
+
+## Build
+
+To compile the application for production:
+
+```bash
+npm run build
+```
+
+The output artifacts will be placed in the `dist/dmi-finance-assignment` directory.
+
+---
+
 ## Assignment Overview
 
 The assignment is divided into three parts:
@@ -123,105 +226,3 @@ KPI card counters are computed dynamically using Angular `computed()` signals wi
 - **Empty Database State**: Shows empty state when no leads are present.
 - **Filtered Empty State**: Shows "No leads match your current search or status filter" with a **Clear Filters** button.
 
----
-
-## Technology Stack
-
-* **Framework**: Angular 20 (Standalone Components, no `NgModule` bloat)
-* **Language**: TypeScript 5.x
-* **State Management**: Angular Signals (`signal`, `computed`)
-* **API / HTTP**: Angular `HttpClient` (`provideHttpClient`)
-* **Forms**: Angular Reactive Forms (`FormBuilder`, `Validators`)
-* **Styling**: Modern Vanilla CSS / SCSS
-* **Mock Backend**: `json-server` (REST API serving `db.json`)
-
----
-
-## Project Structure
-
-```
-src/
-└── app/
-    ├── models/                 # Shared TypeScript interfaces & types
-    ├── services/               # Core data services
-    ├── shared/                 # Reusable UI components & layouts
-    │   └── status-badge/
-    ├── loan-applications/       # Part 1: Loan Application Tracker
-    │   ├── application-detail/
-    │   ├── credit-score-gauge/
-    │   ├── application-filters/
-    │   ├── loan-application-list/
-    │   ├── summary-strip/
-    │   └── loan-application-card/
-    ├── kyc/                    # Part 2: KYB Document Verification Flow
-    │   ├── verify-kyb/         # Main KYB container page component
-    │   ├── kyc-stepper/        # 5-step visual progress bar
-    │   ├── document-upload/    # Reusable file upload & validation box
-    │   └── second-document-modal/ # Second document prompt dialog
-    ├── dashboard/              # Part 3: Lead Management Dashboard (placeholder)
-    ├── app.component.ts        # Root layout with top navigation bar
-    ├── app.config.ts           # App providers configuration
-    └── app.routes.ts           # Navigation route configuration (/applications, /kyc)
-```
-
----
-
-## Development Setup
-
-### Prerequisites
-- **Node.js**: v18.x or higher (Recommended: v20+)
-- **npm**: v9.x or higher
-- **Angular CLI**: v20+ (`npm install -g @angular/cli`)
-
----
-
-## Installation
-
-```bash
-# Clone the repository
-git clone <repository-url>
-
-# Navigate into the project folder
-cd DMI\ Finance_Assignment_task
-
-# Install project dependencies
-npm install
-```
-
----
-
-## Running the Application
-
-### 1. Start the Mock REST API (Port 3000)
-Launch `json-server` watching `db.json`:
-
-```bash
-npm run mock-api
-```
-
-The mock REST API endpoint is available at:
-`GET http://localhost:3000/applications`
-
-### 2. Start the Angular Development Server (Port 4200)
-In a separate terminal:
-
-```bash
-npm start
-```
-
-Navigate to `http://localhost:4200/` in your browser.
-
-- **Part 1 (Loan Applications)**: `http://localhost:4200/applications`
-- **Part 2 (KYB Verification)**: `http://localhost:4200/kyc`
-
----
-
-## Build
-
-To compile the application for production:
-
-```bash
-npm run build
-```
-
-The output artifacts will be placed in the `dist/dmi-finance-assignment` directory.
