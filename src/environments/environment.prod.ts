@@ -1,7 +1,7 @@
 export const environment = {
   production: true,
   useMockApi: false,
-  apiBaseUrl: 'https://api.dmifinance.com/v1',
+  apiBaseUrl: 'https://dmi-finance-assignment-task.onrender.com',
   endpoints: {
     leads: '/leads',
     applications: '/applications'
